@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import './fontawesome.css';
+@import './variables.scss';
+@import './mixin.scss';
+@import './general.scss';
+
+
+//COMPONENT SCSS
+header {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    nav {
+        & > ul {
+            background-color: $color-white;
+            & > li {
+                position: relative;
+            }
+            ul {
+                background-color: $color-white;
+                display: none;
+                position: absolute;
+                top: 0px;
+                left: 100%;
+            }
+            li {
+                white-space: nowrap;
+                a {
+                    padding: 10px 15px;
+                }
+                &:hover {
+                    background-color: $color-body;
+                    @include transition;
+                    & > ul {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+main {
+    padding-left: 30px;
+}
+.product-list {
+    .pl-box {
+        display: flex;
+        flex-direction: column;
+        background-color: $color-white;
+        margin-top: 10px;
+        @include radius4;
+        .images {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        ul {
+            padding: 10px;
+            li {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 5px 0px;
+                b {
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+}
